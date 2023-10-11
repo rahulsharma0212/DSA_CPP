@@ -526,6 +526,173 @@ void numericFullPyramid(int n = 5)
     }
 }
 
+void fancyPattern1(int n = 5)
+{
+    // ********1********
+    // *******2*2*******
+    // ******3*3*3******
+    // *****4*4*4*4*****
+    // ****5*5*5*5*5****
+
+    int max_star = 8;
+    for (int row = 0; row < n; row++)
+    {
+        for (int star = 0; star <= max_star - row - 1; star++)
+        {
+            cout << "*";
+        }
+        for (int col = 0; col < 2 * row + 1; col++)
+        {
+            if (col % 2 == 1)
+            {
+                cout << "*";
+            }
+            else
+            {
+                cout << row + 1;
+            }
+        }
+        for (int star = 0; star <= max_star - row - 1; star++)
+        {
+            cout << "*";
+        }
+
+        cout << endl;
+    }
+}
+
+void fancyPattern2(int n = 4)
+{
+    // 1
+    // 2*3
+    // 4*5*6
+    // 7*8*9*10
+    // 7*8*9*10
+    // 4*5*6
+    // 2*3
+    // 1
+
+    int out = 1;
+    for (int row = 0; row < n; row++)
+    {
+        for (int col = 0; col < 2 * row + 1; col++)
+        {
+            if (col % 2 == 1)
+            {
+                cout << "*";
+            }
+            else
+            {
+                cout << out;
+                out++;
+            }
+        }
+        cout << endl;
+    }
+    for (int row = 0; row < n; row++)
+    {
+        int start = out - (n - row);
+        for (int col = 0; col < 2 * (n - row) - 1; col++)
+        {
+            if (col % 2 == 1)
+            {
+                cout << "*";
+            }
+            else
+            {
+                cout << start;
+                start++;
+            }
+        }
+        out -= (n - row);
+        cout << endl;
+    }
+}
+
+void fancyPattern3(int n = 5)
+{
+    // *
+    // *1*
+    // *121*
+    // *12321*
+    // *121*
+    // *1*
+    // *
+
+    cout << "*" << endl;
+    for (int row = 0; row < n; row++)
+    {
+        int cond = row <= (n / 2) ? 2 * row + 1 : 2 * (n - row) - 1;
+        cout << "*";
+        for (int col = 0; col < cond; col++)
+        {
+            if (col <= (cond / 2))
+            {
+                cout << col + 1;
+            }
+            else
+            {
+                cout << cond - col;
+            }
+        }
+        cout << "*" << endl;
+    }
+    cout << "*" << endl;
+}
+
+void flyodsTrianglePattern(int n = 5)
+{
+    int out = 1;
+    for (int row = 0; row < n; row++)
+    {
+        for (int col = 0; col < row + 1; col++)
+        {
+            cout << out++ << " ";
+        }
+        cout << endl;
+    }
+}
+
+void pascalsTrianglePattern(int n = 5)
+{
+    for (int row = 1; row <= n; row++)
+    {
+        int out = 1;
+        for (int col = 1; col <= row; col++)
+        {
+            cout << out << " ";
+            out = out * (row - col) / col;
+        }
+        cout << endl;
+    }
+}
+
+void butterFlyPattern(int n = 5)
+{
+    for (int row = 0; row < 2 * n; row++)
+    {
+        int cond = row < n ? row : 2 * n - row - 1;
+        int space = row <= n ? 2 * (n - row - 1) : row - cond - 1;
+        for (int col = 0; col < 2 * n; col++)
+        {
+            if (col <= cond)
+            {
+                cout << "*";
+            }
+            else if (space > 0)
+            {
+                cout << " ";
+                space--;
+            }
+            else
+            {
+                cout << "*";
+            }
+        }
+        cout << endl;
+    }
+}
+
 int main()
 {
     // solidRectangle();
@@ -547,5 +714,11 @@ int main()
     // numericPalindromeEquilateralPyramid();
     // solidHalfDiamond();
     // numericFullPyramid();
+    // fancyPattern1();
+    // fancyPattern2();
+    // fancyPattern3();
+    // flyodsTrianglePattern();
+    // pascalsTrianglePattern();
+    // butterFlyPattern();
     return 0;
 }

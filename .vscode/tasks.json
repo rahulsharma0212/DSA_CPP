@@ -26,6 +26,30 @@
             }
         },
         {
+            "label": "Compile and run linux",
+            "type": "shell",
+            "command": "cp \"${file}\" \"${workspaceFolder}/jspwTest.cpp\" && g++ jspwTest.cpp -o jspwTest && cat input.txt | ./jspwTest > output.txt && rm jspwTest jspwTest.cpp",
+            "presentation": {
+                "reveal": "never"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": {
+                "owner": "cpp",
+                "fileLocation": ["relative", "${workspaceRoot}"],
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5
+                }
+            }
+        },
+        {
             "type": "cppbuild",
             "label": "C/C++: g++.exe build active file",
             "command": "C:\\MinGW\\bin\\g++.exe",
