@@ -1,5 +1,11 @@
 {
     "editor.formatOnSave": true,
     "prettier.tabWidth": 4,
-    "prettier.semi": true
+    "prettier.semi": true,
+    "files.associations": {
+        "*.excalidraw": "json",
+        "*.excalidrawlib": "json",
+        "ostream": "cpp",
+        "iostream": "cpp"
+    }
 }
