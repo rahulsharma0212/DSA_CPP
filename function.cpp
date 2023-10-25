@@ -110,6 +110,48 @@ void printPrimeUpto(int n)
     }
 }
 
+int setTheKthBit(int n, int k)
+{
+    // 10(1010) | 100 == (14)1110
+    return (n | (1 << k));
+}
+
+char convertSmallToUpper(char ch)
+{
+    return ((ch - 'a') + 'A');
+}
+int getDigitCount(int n)
+{
+    int count = 0;
+    while (n)
+    {
+        count++;
+        n = n / 10;
+    }
+    return count;
+}
+
+bool isArmstrong(int n)
+{
+    int digitsCount = getDigitCount(n);
+    int result = 0, num = n, rem;
+    while (n)
+    {
+        rem = n % 10;
+        result = result + round(pow(rem, digitsCount));
+        n = n / 10;
+    }
+
+    if (num == result)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
 int main()
 {
     int a = 2;
@@ -169,7 +211,56 @@ int main()
     /* Print prime upto N */
     // printPrimeUpto(20);
 
-    return 0;
+    /**
+     *  TODO: set the kth bit
+     *  link :: https://practice.geeksforgeeks.org/problems/set-kth-bit3724/1
+     */
+    // cout << "change 2 bit of 10 (1010) to 1 results in 14(1110) :: " << setTheKthBit(14, 2) << endl;
+    // return 0;
+
+    /*
+     * TODO: reverse integer
+     * link: https://leetcode.com/problems/reverse-integer/
+     */
+
+    /*
+     * TODO: Add digit
+     * link: https://leetcode.com/problems/add-digits/
+     */
+
+    /*
+     * TODO: Leap Year
+     * link: https://practice.geeksforgeeks.org/problems/leap-year0943/1
+     */
+
+    /*
+     * TODO: Power of Two
+     * link: https://leetcode.com/problems/power-of-two/
+     */
+
+    /*
+     * TODO: Palindrome Number
+     * link: https://leetcode.com/problems/palindrome-number
+     */
+
+    /*
+     * TODO: Complement of Base 10 Integer
+     * link: https://leetcode.com/problems/palindrome-number
+     */
+
+    /* Convert small case char to uppercase char */
+    // cout << convertSmallToUpper('d') << endl;
+    // cout << convertSmallToUpper('g') << endl;
+
+    /* is Armstorng  eg=153 == 1^3+5^3+3^3 */
+    // cout << isArmstrong(153) << endl;
+    // cout << isArmstrong(258) << endl;
+    // cout << isArmstrong(2) << endl;
+
+    /*
+     * TODO: Trailing zeroes in factorial
+     * link: https://practice.geeksforgeeks.org/problems/trailing-zeroes-in-factorial5134/1
+     */
 }
 
 int add(int val_1, int val_2)
