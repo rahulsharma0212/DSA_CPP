@@ -261,6 +261,16 @@ int main()
      * TODO: Trailing zeroes in factorial
      * link: https://practice.geeksforgeeks.org/problems/trailing-zeroes-in-factorial5134/1
      */
+
+    /*
+     * TODO: Total Moves For Bishop!
+     * link: https://www.interviewbit.com/problems/total-moves-for-bishop/
+     */
+
+    /*
+     * TODO: Nim Game
+     * link: https://leetcode.com/problems/nim-game/description/
+     */
 }
 
 int add(int val_1, int val_2)
