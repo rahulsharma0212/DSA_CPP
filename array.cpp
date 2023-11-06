@@ -1,5 +1,6 @@
 #include <iostream>
 #include <limits.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 void printArray(int arr[], int size)
@@ -112,6 +113,157 @@ void printExtremeArray(int arr[], int size)
     cout << endl;
 }
 
+void sortColor(int arr[], int size)
+{
+    /* int zero = 0, one = 0, two = 0;
+    for (int i = 0; i < size; i++)
+    {
+        if (arr[i] == 0)
+            zero++;
+        else if (arr[i] == 1)
+            one++;
+        else
+            two++;
+    }
+    int i = 0;
+    while (zero--)
+    {
+        arr[i] = 0;
+        i++;
+    }
+    while (one--)
+    {
+        arr[i] = 1;
+        i++;
+    }
+    while (two--)
+    {
+        arr[i] = 2;
+        i++;
+    } */
+
+    int left = 0, mid = 0, right = size - 1;
+    while (mid <= right)
+    {
+        if (arr[mid] == 0)
+        {
+            swap(arr[left], arr[mid]);
+            left++;
+            mid++;
+        }
+        else if (arr[mid] == 1)
+        {
+            mid++;
+        }
+        else
+        {
+            swap(arr[right], arr[mid]);
+            right--;
+        }
+    }
+}
+
+void moveAllNegativeToLeft(int arr[], int size)
+{
+    int left = 0, right = size - 1;
+    while (left <= right)
+    {
+        if (arr[left] < 0)
+        {
+            left++;
+        }
+        else if (arr[right] > 0)
+        {
+            right--;
+        }
+        else
+        {
+            swap(arr[left], arr[right]);
+        }
+    }
+}
+
+int findDuplicate(int arr[], int size)
+{
+    /* using inbuilt sorting */
+    /* sort(arr, arr + size);
+    for (int i = 0; i < size - 1; i++)
+    {
+        if (arr[i] == arr[i + 1])
+        {
+            return arr[i];
+        }
+    } */
+
+    /* Visting solution  */
+    /* for (int i = 0; i < size; i++)
+    {
+        int index = abs(arr[i]);
+        if (arr[index] < 0)
+        {
+            return index;
+        }
+        // mark visited
+        arr[index] *= -1;
+        // printArray(arr, size);
+    } */
+
+    /* Position method */
+
+    while (arr[0] != arr[arr[0]])
+    {
+        swap(arr[0], arr[arr[0]]);
+    }
+    return arr[0];
+}
+
+void findMissingElement(int arr[], int size)
+{
+    /* Visiting method */
+    // for (int i = 0; i < size; i++)
+    // {
+    //     int index = abs(arr[i]) - 1;
+    //     if (arr[index] > 0)
+    //     {
+    //         arr[index] *= -1;
+    //     }
+    // }
+    // // printArray(arr, size);
+    // cout << "Missing elements are :: ";
+    // for (int i = 0; i < size; i++)
+    // {
+    //     if (arr[i] > 0)
+    //     {
+    //         cout << i + 1 << " ";
+    //     }
+    // }
+    // cout << endl;
+
+    /* Position method */
+    int i = 0;
+    while (i < size)
+    {
+        int index = arr[i] - 1;
+        if (arr[i] != arr[index])
+        {
+            swap(arr[i], arr[index]);
+        }
+        else
+        {
+            i++;
+        }
+    }
+    cout << "Missing elements are :: ";
+    for (int i = 0; i < size; i++)
+    {
+        if (arr[i] != i + 1)
+        {
+            cout << i + 1 << " ";
+        }
+    }
+    cout << endl;
+}
+
 int main()
 {
     /* different method of declaring array*/
@@ -191,6 +343,38 @@ int main()
     // printExtremeArray(arr, 5);
     // int arr1[] = {1, 2, 3, 4, 5, 6};
     // printExtremeArray(arr1, 6);
+
+    /*
+    TODO:  Sort Colors
+    link: https://leetcode.com/problems/sort-colors/
+     */
+    // int arr[] = {0, 1, 0, 1, 2, 2, 0, 1};
+    // int size = sizeof(arr) / sizeof(int);
+    // printArray(arr, size);
+    // sortColor(arr, size);
+    // printArray(arr, size);
+
+    /* Move all negative to left */
+    // int arr[] = {1, -5, 2, 9, 8, -3, -1};
+    // int size = sizeof(arr) / sizeof(int);
+    // printArray(arr, size);
+    // moveAllNegativeToLeft(arr, size);
+    // printArray(arr, size);
+
+    /* TODO: Find the Duplicate Number
+    link: https://leetcode.com/problems/find-the-duplicate-number/description/
+     */
+    // int arr[] = {1, 3, 4, 2, 2};
+    // int size = sizeof(arr) / sizeof(int);
+    // printArray(arr, size);
+    // cout << "finding duplicate in {1, 3, 4, 2, 2} :: " << findDuplicate(arr, size);
+
+    /* Find missing element */
+    // N => size of array ,a[i] => [1,N]
+    // int arr[] = {1, 3, 3, 3, 5};
+    // int size = sizeof(arr) / sizeof(int);
+    // printArray(arr, size);
+    // findMissingElement(arr, size);
 
     return 0;
 }
