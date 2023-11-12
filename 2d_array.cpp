@@ -144,5 +144,85 @@ int main()
     //     cout << endl;
     // }
 
+    /* Wave print a matrix */
+    // vector<vector<int>> arr{
+    //     {1, 2, 3, 4},
+    //     {5, 6, 7, 8},
+    //     {9, 10, 11, 12},
+    // };
+
+    // for (int col = 0; col < arr[0].size(); col++)
+    // {
+
+    //     if ((col & 1) == 0)
+    //     {
+
+    //         for (int row = 0; row < arr.size(); row++)
+    //         {
+    //             cout << arr[row][col] << " ";
+    //         }
+    //     }
+    //     else
+    //     {
+    //         for (int row = arr.size() - 1; row >= 0; row--)
+    //         {
+    //             cout << arr[row][col] << " ";
+    //         }
+    //     }
+    // }
+
+    /*
+    TODO: Spiral Matrix
+    link: https://leetcode.com/problems/spiral-matrix/
+     */
+
+    /* Print a matrix in spiral */
+    // vector<vector<int>> arr{
+    //     {1, 2, 3, 4},
+    //     {5, 6, 7, 8},
+    //     {9, 10, 11, 12},
+    //     {13, 14, 15, 16},
+    // };
+    // // no of rows
+    // int m = arr.size();
+    // // no of columns
+    // int n = arr[0].size();
+    // int total_number = m * n;
+
+    // int startingRow = 0;
+    // int endingRow = m - 1;
+    // int startingCol = 0;
+    // int endingCol = n - 1;
+
+    // int nums = 0;
+
+    // while (nums < total_number)
+    // {
+    //     for (int i = startingCol; i <= endingCol; i++)
+    //     {
+    //         cout << arr[startingRow][i] << " ";
+    //         nums++;
+    //     }
+    //     startingRow++;
+    //     for (int i = startingRow; i <= endingRow; i++)
+    //     {
+    //         cout << arr[i][endingCol] << " ";
+    //         nums++;
+    //     }
+    //     endingCol--;
+    //     for (int i = endingCol; i >= startingCol; i--)
+    //     {
+    //         cout << arr[endingRow][i] << " ";
+    //         nums++;
+    //     }
+    //     endingRow--;
+    //     for (int i = endingRow; i >= startingRow; i--)
+    //     {
+    //         cout << arr[i][startingCol] << " ";
+    //         nums++;
+    //     }
+    //     startingCol++;
+    // }
+
     return 0;
 }

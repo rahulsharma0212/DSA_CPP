@@ -376,5 +376,31 @@ int main()
     // printArray(arr, size);
     // findMissingElement(arr, size);
 
+    /* Find first repeating element */
+    // int arr[] = {1, 3, 4, 5, 3, 5, 6};
+    // int size = sizeof(arr) / sizeof(int);
+    // printArray(arr, size);
+    // for (int i = 0; i < size; i++)
+    // {
+    //     int isRepeatingFound = false;
+    //     for (int j = i + 1; j < size; j++)
+    //     {
+    //         if (arr[i] == arr[j])
+    //         {
+    //             isRepeatingFound = true;
+    //             cout << "Repeating element is :: " << arr[i] << endl;
+    //         }
+    //         // if (isRepeatingFound)
+    //         //     break;
+    //     }
+    //     if (isRepeatingFound)
+    //         break;
+    // }
+
+    /*
+    TODO: Add two numbers represented by two arrays
+    link: https://practice.geeksforgeeks.org/problems/add-two-numbers-represented-by-two-arrays2408/1
+     */
+
     return 0;
 }
